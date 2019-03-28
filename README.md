@@ -2,4 +2,4 @@
 
 or not
 
-run `yarn start` to
+run `yarn start` to start the app
