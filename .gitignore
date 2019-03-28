@@ -1,2 +1,5 @@
 /node_modules
 /_build
+### Node ###
+# Logs
+yarn-error.log*
