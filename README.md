@@ -2,4 +2,8 @@
 
 or not
 
-run `yarn start` to start the app
+# Development
+
+run `yarn start` to start the application
+
+> [nice airbnb conventions](https://github.com/airbnb/javascript/tree/master/react).

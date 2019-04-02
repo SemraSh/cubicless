@@ -1,12 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const devWebpackConfig = require('./webpack/webpack.development.config')
-// const productionWebpackConfig = require('./webpack/webpack.production.config')
 
 module.exports = function(webpackEnv) {
-  const isDevelopment = webpackEnv === 'development'
-  const isProduction = webpackEnv === 'production'
-
   return {
     mode: webpackEnv,
     entry: './src/index.js',
@@ -17,7 +12,7 @@ module.exports = function(webpackEnv) {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.jsx?$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
@@ -34,17 +29,19 @@ module.exports = function(webpackEnv) {
         },
       ],
     },
+    resolve: {
+      extensions: ['.js', '.jsx'],
+    },
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html',
-        filename: './index.html',
       }),
     ],
     devServer: {
       port: 3000,
       compress: true,
       noInfo: true,
-      quiet: true,
+      open: true,
       hot: true,
     },
   }
