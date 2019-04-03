@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/SemraSh/cubicless#readme",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
     "express": "^4.16.4",
     "path": "^0.12.7",
+    "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "styled-components": "^4.2.0",
