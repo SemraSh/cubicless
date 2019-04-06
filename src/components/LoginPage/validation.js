@@ -1,11 +1,11 @@
 export const validateEmail = email => {
   const emailMathcer = /\S+@\S+\.\S+/y
-  return emailMathcer.test(email)
+  return emailMathcer.test(email.trim())
 }
 
 export const validatePassword = password => {
   const passwordMatcher = /[a-zA-Z0-9]{6,}/
-  return passwordMatcher.test(password)
+  return passwordMatcher.test(password.trim())
 }
 
 export const validationMessages = {

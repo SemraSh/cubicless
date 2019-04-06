@@ -12,22 +12,33 @@ const Wrapper = styled.div`
   width: 100vw;
 `
 
-const Input = styled.input``
-
-const Button = styled.button``
-
-const Form = styled.form``
-
-const ValidationMessage = styled.small`
-  color: red;
+const Input = styled.input`
+  display: block;
+  height: 20px;
 `
+
+const Button = styled.button`
+  display: block;
+`
+
+const Form = styled.form`
+  margin: auto;
+`
+
+const ValidationMessage = styled.div`
+  color: red;
+  height: 24px;
+  font-size: 12px;
+`
+
+const H3 = styled.h3``
 
 class LoginPage extends React.Component {
   state = {
     isLoggedIn: false,
     email: '',
     password: '',
-    message: { email: '', password: '' },
+    validationMessage: { email: '', password: '' },
   }
 
   handleSubmit = event => {
@@ -36,40 +47,59 @@ class LoginPage extends React.Component {
     const isPasswordValid = validatePassword(password)
 
     event.preventDefault()
+
     if (isEmailValid && isPasswordValid) {
       this.setState({
         isLoggedIn: true,
       })
-    } else {
-      // TODO map messages
+    } else if (!isEmailValid || !isPasswordValid) {
+      this.setState({
+        validationMessage: {
+          email: isEmailValid ? '' : validationMessages.email,
+          password: isPasswordValid ? '' : validationMessages.password,
+        },
+      })
     }
   }
 
-  handleInput = event => {
-    this.setState({
-      email: event.taget.value,
-    })
+  handleChange = event => {
+    const target = event.target.name
+    const { value } = event.target
+
+    if (target === 'email') {
+      this.setState({
+        email: value,
+      })
+    } else if (target === 'password') {
+      this.setState({
+        password: value,
+      })
+    }
   }
 
   render() {
-    const { email, password, message } = this.state
+    const { email, password, validationMessage } = this.state
+
     return (
       <Wrapper>
         <Form onSubmit={this.handleSubmit}>
+          <H3>WANNA JOIN? FILL THE STUFF</H3>
           <Input
-            type="email"
+            name="email"
+            type="text"
             placeholder="put ya email address"
             onChange={this.handleChange}
             value={email}
           />
-          <ValidationMessage>{message.email}</ValidationMessage>
+          <ValidationMessage>{validationMessage.email}</ValidationMessage>
           <Input
-            type="password"
+            name="password"
+            type="text"
             placeholder="be secure"
             onChange={this.handleChange}
             value={password}
           />
-          <ValidationMessage>{message.password}</ValidationMessage>
+          <ValidationMessage>{validationMessage.password}</ValidationMessage>
           <Button type="submit">show me the stuff</Button>
         </Form>
       </Wrapper>
