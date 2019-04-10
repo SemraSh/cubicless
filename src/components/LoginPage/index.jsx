@@ -5,33 +5,7 @@ import {
   validatePassword,
   validationMessages,
 } from './validation'
-
-const Wrapper = styled.div`
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-`
-
-const Input = styled.input`
-  display: block;
-  height: 20px;
-`
-
-const Button = styled.button`
-  display: block;
-`
-
-const Form = styled.form`
-  margin: auto;
-`
-
-const ValidationMessage = styled.div`
-  color: red;
-  height: 24px;
-  font-size: 12px;
-`
-
-const H3 = styled.h3``
+import { Wrapper, Input, Button, Form, ValidationMessage, H3 } from './styled'
 
 class LoginPage extends React.Component {
   state = {
