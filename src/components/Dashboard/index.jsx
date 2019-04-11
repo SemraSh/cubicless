@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { engineers, principles, clients } from '../../dummyData'
+import { engineers, principles, clients } from '../../../dummyData'
 
 const H2 = styled.h2``
 
