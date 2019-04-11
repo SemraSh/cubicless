@@ -2,3 +2,4 @@
 /_build
 yarn-error.log*
 test.js
+.env
