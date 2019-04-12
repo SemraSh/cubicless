@@ -39,14 +39,14 @@ const checkJwt = jwt({
   algorithms: ['RS256'],
 })
 
-app.post('/clinet', checkJwt, (req, res) => {
+app.post('/client', checkJwt, (req, res) => {
   const { name } = req.body
-  const newClinet = {
+  const newClient = {
     name,
     status: 'active',
   }
   data.clients.push(newClient)
-  res.status(200).send()
+  res.status(200).send(newClient)
 })
 
 app.listen(8080, () => console.log('listening on port 8080'))

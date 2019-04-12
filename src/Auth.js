@@ -3,10 +3,10 @@ import auth0 from 'auth0-js'
 class Auth {
   constructor() {
     this.auth0 = new auth0.WebAuth({
-      damain: 'dev-evbgqxay.eu.auth0.com',
+      domain: 'dev-evbgqxay.eu.auth0.com',
       audience: 'https://dev-evbgqxay.eu.auth0.com/userinfo',
       clientID: 'rnRsOTRIDRlzCPpIHX266PNg0ENArP33',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: 'http://localhost:3000/',
       responseType: 'id_token',
       scope: 'openid profile',
     })

@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/SemraSh/cubicless#readme",
   "dependencies": {
+    "@babel/runtime": "^7.4.3",
     "auth0-js": "^9.10.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",

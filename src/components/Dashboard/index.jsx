@@ -8,15 +8,6 @@ const ClientList = styled.div``
 
 const Client = styled.div``
 
-const Dashboard = () => (
-  <DashboardWrapper>
-    <H2>Company: YLD</H2>
-    <ClientList>
-      {clients.map(client => (
-        <Client>{client.name}</Client>
-      ))}
-    </ClientList>
-  </DashboardWrapper>
-)
+const Dashboard = () => <H2>Company: YLD</H2>
 
 export default Dashboard
